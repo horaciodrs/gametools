@@ -9,6 +9,8 @@ C++ gametools using SFML
 - git config --global user.email "horaciodrs@gmail.com"
  
 ### **SUBIR CAMBIOS**
-- git add .
-- git commit -m "Mensaje...."
-- git push -u origin master
+```git
+git add .
+git commit -m "Mensaje...."
+git push -u origin master
+```
