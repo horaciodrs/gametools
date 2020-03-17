@@ -17,7 +17,7 @@ git commit -m "Mensaje...."
 git push -u origin master
 ```
 
-### **Compilar**
+## **Compilar**
 	
 - En Linux
 ```sh
