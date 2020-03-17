@@ -3,7 +3,7 @@
 
 #include <SFML/Audio.hpp>
 
-namespace Ros{
+namespace GT{
 
     class Sound{
         

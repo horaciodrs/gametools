@@ -3,7 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 
-namespace Ros{
+namespace GT{
 
     class Image{
         

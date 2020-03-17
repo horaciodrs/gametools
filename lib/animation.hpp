@@ -3,9 +3,9 @@
 
 #include "object.hpp"
 
-namespace Ros{
+namespace GT{
 
-	class Animation : public Ros::Object{
+	class Animation : public GT::Object{
 
 		private:
 			int FrameWidth;

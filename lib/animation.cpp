@@ -1,6 +1,6 @@
 #include "animation.hpp"
 
-namespace Ros{
+namespace GT{
 
 	void Animation::Begin(void){
 		Running = true;

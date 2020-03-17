@@ -1,6 +1,6 @@
 #include "application.hpp"
 
-namespace Ros{
+namespace GT{
 
     bool Application::doIt(int prov, int range){
 
@@ -26,7 +26,7 @@ namespace Ros{
 
     void Application::EscribirTexto(std::string fontId, std::string str, int size, int x, int y, sf::Color color){
 
-		Ros::Font *Fnt = this->Fonts.Get(fontId);
+		GT::Font *Fnt = this->Fonts.Get(fontId);
 
 		Fnt->Draw(str, size, x, y, 0, color);
 
@@ -34,7 +34,7 @@ namespace Ros{
 
 	void Application::EscribirTexto(std::string fontId, std::string str, int size, int x, int y){
 
-		Ros::Font *Fnt = this->Fonts.Get(fontId);
+		GT::Font *Fnt = this->Fonts.Get(fontId);
 
 		Fnt->Draw(str, size, x, y);
 
@@ -61,13 +61,13 @@ namespace Ros{
 
 	}
 
-    Ros::Image* Application::GetImage(std::string pId){
+    GT::Image* Application::GetImage(std::string pId){
 
         return Images.Get(pId);
 
     }
 
-    Ros::Font* Application::GetFont(std::string pId){
+    GT::Font* Application::GetFont(std::string pId){
 
         return Fonts.Get(pId);
 
@@ -75,7 +75,7 @@ namespace Ros{
 
     void Application::AgregarImagen(std::string pId, std::string pUrl){
 
-        Ros::Image i(pId, pUrl, Window);
+        GT::Image i(pId, pUrl, Window);
 
         Images.Add(i);
 
@@ -83,7 +83,7 @@ namespace Ros{
 
     void Application::AgregarFuente(std::string pId, std::string pUrl){
 
-        Ros::Font i(pId, pUrl, Window);
+        GT::Font i(pId, pUrl, Window);
 
         Fonts.Add(i);
 
@@ -91,13 +91,13 @@ namespace Ros{
 
     void Application::AgregarSonido(std::string pId, std::string pUrl){
 
-        Ros::Sound s(pId, pUrl);
+        GT::Sound s(pId, pUrl);
 
         Sounds.Add(s);
 
     }
 
-	void Application::AgregarPantalla(Ros::Pantalla *p){
+	void Application::AgregarPantalla(GT::Pantalla *p){
 
 		Pantallas.Add(p);
 

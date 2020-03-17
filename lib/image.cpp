@@ -1,7 +1,7 @@
 #include <iostream>
 #include "image.hpp"
 
-namespace Ros{
+namespace GT{
 
     void Image::Draw(int x, int y){
     	

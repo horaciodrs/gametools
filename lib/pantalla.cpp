@@ -1,6 +1,6 @@
 #include "pantalla.hpp"
 
-namespace Ros{
+namespace GT{
     
     void Pantalla::Init(void){
         //Esta funcion tiene que ser redefinida en las clases que hereden a Pantalla
@@ -62,6 +62,7 @@ namespace Ros{
 				
 				if (event.type == sf::Event::Resized){
 					App->Window->setView(sf::View(sf::FloatRect(0.f, 0.f, static_cast<float>(App->Window->getSize().x),static_cast<float>(App->Window->getSize().y))));
+					//App->Window->setView(sf::View(sf::FloatRect(0, 0, event.size.width, event.size.height)));
 					
 					App->UpdateScreenWidth(App->Window->getSize().x);
 					App->UpdateScreenHeight(App->Window->getSize().y);

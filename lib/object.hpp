@@ -5,7 +5,7 @@
 #include <math.h>
 #include "image.hpp"
 
-namespace Ros{
+namespace GT{
 
 	class Application;
 
@@ -20,17 +20,17 @@ namespace Ros{
 			int dx;
 			int dy;
 			float angle;			//Angulo de la imagen.
-			Ros::Image *Image;		//Puntero al Asset;
-			Ros::Application *App;	//Puntero a la aplicacion.
+			GT::Image *Image;		//Puntero al Asset;
+			GT::Application *App;	//Puntero a la aplicacion.
 		public:
 			/*SETTERS*/
-			void setImage(Ros::Image *pImage);
+			void setImage(GT::Image *pImage);
 			void setX(int pX){x = pX;}
 			void setY(int pY){y = pY;}
-			void setApplication(Ros::Application *pApp){App = pApp;}
+			void setApplication(GT::Application *pApp){App = pApp;}
 			void setAngle(float pAngle){angle = pAngle;}
 			/*GETTERS*/
-			Ros::Image *getImage(void){return Image;}
+			GT::Image *getImage(void){return Image;}
 			std::string getId(void){return Id;}
 			std::string getImageId(void){return Image->getId();}
 			int getX(){return x;}
@@ -38,21 +38,21 @@ namespace Ros{
 			int getW(){return w;}
 			int getH(){return h;}
 			float getAngle(){return angle;}
-			float getDistance(Ros::Object *AnotherObject);
+			float getDistance(GT::Object *AnotherObject);
 			/*CHANGE POSITION*/
 			void changeX(int increment);
 			void changeY(int increment);
 			void changeAngle(float increment);
 			void calculateDiferencial(int Velocidad);
 			void moveByAngle(int Velocidad);
-			bool CheckCollision(Ros::Object *AnotherObject);
-			void followObject(Ros::Object *AnotherObject, int Velocidad);
+			bool CheckCollision(GT::Object *AnotherObject);
+			void followObject(GT::Object *AnotherObject, int Velocidad);
 			void Draw(int x, int y);
 			void Draw(int x,int y,int l,int t,int w,int h);
 			virtual void EventHandler(sf::Event *event);
 			virtual void Draw();
 			Object(std::string pId);
-			Object(std::string pId, Ros::Application *pApp);
+			Object(std::string pId, GT::Application *pApp);
 			virtual ~Object(){};
 
 	};

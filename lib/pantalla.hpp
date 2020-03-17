@@ -5,7 +5,7 @@
 #include "image.hpp"
 #include "application.hpp"
 
-namespace Ros{
+namespace GT{
 	
 	enum Teclas{keyLeft, keyUp, keyRight, keyDown, keySpace, keyEnter, keyEscape};
 
@@ -14,7 +14,7 @@ namespace Ros{
 	class Pantalla{
 		protected:
 			std::string Id;
-			Ros::Application *App;
+			GT::Application *App;
             bool Running;
             void ResetKeys(void);
 		public:
@@ -32,7 +32,7 @@ namespace Ros{
 			virtual void OnWindowResize(void);
             virtual void End(void);
 			virtual ~Pantalla();
-			Pantalla(std::string pId, Ros::Application *pApp);
+			Pantalla(std::string pId, GT::Application *pApp);
 
 	};
 

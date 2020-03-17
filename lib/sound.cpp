@@ -1,7 +1,7 @@
 #include <iostream>
 #include "sound.hpp"
 
-namespace Ros{
+namespace GT{
 
     void Sound::Play(int volume, bool loop){
 

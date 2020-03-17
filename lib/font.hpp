@@ -4,7 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/Font.hpp>
 
-namespace Ros{
+namespace GT{
 
     class Font{
         

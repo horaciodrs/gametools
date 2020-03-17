@@ -1,6 +1,6 @@
 #include "object.hpp"
 
-namespace Ros{
+namespace GT{
 
 	void Object::moveByAngle(int Velocidad){
 
@@ -30,11 +30,11 @@ namespace Ros{
 
 	}
 
-	float Object::getDistance(Ros::Object *AnotherObject){
+	float Object::getDistance(GT::Object *AnotherObject){
 		return sqrt(pow(x-AnotherObject->getX(), 2) + pow(y-AnotherObject->getY(), 2));
 	}
 
-	void Object::followObject(Ros::Object *AnotherObject, int Velocidad){
+	void Object::followObject(GT::Object *AnotherObject, int Velocidad){
 
 	    int enemigoX = AnotherObject->getX() + AnotherObject->getW()/2;
 	    int enemigoY = AnotherObject->getY() + AnotherObject->getH()/2;
@@ -96,7 +96,7 @@ namespace Ros{
 		//en las clases que hereden a object.
 	}
 
-	bool Object::CheckCollision(Ros::Object *AnotherObject){
+	bool Object::CheckCollision(GT::Object *AnotherObject){
 
 		if(x + getW()/2 > AnotherObject->getX() && x + getW()/2 < AnotherObject->getX() + AnotherObject->getW()){
 			if(y + getH()/2 > AnotherObject->getY() && y + getH()/2 < AnotherObject->getY() + AnotherObject->getH()){
@@ -108,7 +108,7 @@ namespace Ros{
 
 	}
 
-	void Object::setImage(Ros::Image *pImage){
+	void Object::setImage(GT::Image *pImage){
 
 		Image = pImage;
 
@@ -144,7 +144,7 @@ namespace Ros{
 		angle = 0;
 	}
 
-	Object::Object(std::string pId, Ros::Application *pApp) : Id(pId), App(pApp) {
+	Object::Object(std::string pId, GT::Application *pApp) : Id(pId), App(pApp) {
 		angle = 0;
 	}
 

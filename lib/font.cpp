@@ -1,7 +1,7 @@
 #include <iostream>
 #include "font.hpp"
 
-namespace Ros{
+namespace GT{
 
     void Font::Draw(std::string str, int size, int x, int y){
 
