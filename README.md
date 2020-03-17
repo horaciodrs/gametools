@@ -16,3 +16,13 @@ git add .
 git commit -m "Mensaje...."
 git push -u origin master
 ```
+
+### **Compilar**
+	
+- En Linux
+```sh
+g++ lib/*.cpp *.cpp -o game  -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
+```
+- En Windows
+ ```shg++ -LC:\SFML-2.5.1\lib lib/*.cpp *.cpp -o game  -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
+ ```
