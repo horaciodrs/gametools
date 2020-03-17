@@ -21,8 +21,10 @@ git push -u origin master
 	
 - En Linux
 ```sh
+sudo apt install build-essential libsfml-dev
 g++ lib/*.cpp *.cpp -o game  -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 ```
 - En Windows
- ```shg++ -LC:\SFML-2.5.1\lib lib/*.cpp *.cpp -o game  -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
+ ```sh
+ g++ -LC:\SFML-2.5.1\lib lib/*.cpp *.cpp -o game  -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
  ```
