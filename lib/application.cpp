@@ -116,7 +116,8 @@ namespace GT{
 	}
 
 	void Application::Init(void){
-
+        //Esta función es virtual. Se define en la
+        //clase heredada.
 
 	}
 

@@ -48,10 +48,10 @@ namespace GT{
 			void AgregarPantalla(GT::Pantalla *p);
 			void EscribirTexto(std::string fontId, std::string srt, int size, int x, int y);
 			void EscribirTexto(std::string fontId, std::string srt, int size, int x, int y, sf::Color color);
-			void Init(void);
+			virtual void Init(void);
 			void Run(void);
 			Application(int w, int h, std::string title);
-			~Application();
+			virtual ~Application();
 
 	};
 
