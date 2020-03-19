@@ -19,10 +19,9 @@ void PantallaMenu::Salir(std::string pPantallaId){
 
 void PantallaMenu::EventHandler(void){
 
-    if(this->isKeyActive[GT::keyEscape]){   
+    if(this->isKeyActive[GT::keyEscape]){
         this->Salir("");
     }
-
 
 }
 

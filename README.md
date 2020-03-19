@@ -1,7 +1,7 @@
 # gametools
 C++ gametools using SFML
 
-## **Using Git**
+## **Utilizando Git**
 
 #### **Clonar el Proyecto**
 ```git
@@ -22,9 +22,9 @@ git push -u origin master
 - **En Linux**
 ```sh
 sudo apt install build-essential libsfml-dev
-g++ lib/*.cpp *.cpp -o game  -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
+g++ lib/*.cpp src/*.cpp *.cpp -o game  -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 ```
 - **En Windows**
  ```sh
- g++ -LC:\SFML-2.5.1\lib lib/*.cpp *.cpp -o game  -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
+ g++ -LC:\SFML-2.5.1\lib lib/*.cpp src/*.cpp *.cpp -o game  -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
  ```
