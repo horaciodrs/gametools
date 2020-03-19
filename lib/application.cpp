@@ -1,4 +1,5 @@
 #include "application.hpp"
+#include "configfile.h"
 
 namespace GT{
 
@@ -123,14 +124,28 @@ namespace GT{
 
 	Application::Application(int w, int h, std::string title){
 
-		Width = w;
-		Height = h;
+        ConfigFile GameSettings("game.cfg");
 
-		Window = new sf::RenderWindow(sf::VideoMode(w, h), title, sf::Style::Fullscreen);
+		int Width = GameSettings.Value("graphics", "width");
+		int Height = GameSettings.Value("graphics", "height");
+        int FrameRateLimit = GameSettings.Value("graphics", "limitfps");
+        std::string VerticalSync = GameSettings.Value("graphics", "limitfps");
+        std::string FullScreen = GameSettings.Value("graphics", "fullscreen");
 
-		Window->setFramerateLimit(60);
-		Window->setVerticalSyncEnabled(true);
+        if(FullScreen == "true"){
+            Window = new sf::RenderWindow(sf::VideoMode(Width, Height), title, sf::Style::Fullscreen);
+        }else{
+            Window = new sf::RenderWindow(sf::VideoMode(Width, Height), title, sf::Style::Default);
+        }
+		
+		Window->setFramerateLimit(FrameRateLimit);
 
+        if(VerticalSync == "true"){
+            Window->setVerticalSyncEnabled(true);
+        }else{
+            Window->setVerticalSyncEnabled(false);
+        }
+		
 		PantallaActiva = NULL;
 
 	}
