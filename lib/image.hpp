@@ -12,7 +12,11 @@ namespace GT{
             std::string Url;
             sf::Texture *Imagen;
             sf::RenderWindow *Window;
+            float FactorScaleX;
+            float FactorScaleY;
         public:
+            void setFactorScaleX(float sx){FactorScaleX = sx;}
+            void setFactorScaleY(float sy){FactorScaleY = sy;}
             std::string getId(){return Id;}
             std::string getUrl(){return Url;}
             int getWidth(){return Imagen->getSize().x;}

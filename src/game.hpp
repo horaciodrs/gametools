@@ -10,7 +10,7 @@ class MyGame : public GT::Application{
     public:
         void Init(void);
         void End(void);
-        MyGame(int w, int h, std::string title);
+        MyGame(std::string title);
         ~MyGame();
 };
 

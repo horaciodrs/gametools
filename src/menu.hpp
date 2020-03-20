@@ -8,7 +8,7 @@
 class PantallaMenu : public GT::Pantalla{
 
 	private:
-		ObjectManager<GT::Object> Estrellas;
+		GT::Object * Frame;
 
 	public:
 		void Init(void);

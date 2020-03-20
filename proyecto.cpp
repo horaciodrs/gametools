@@ -6,7 +6,7 @@
 
 int main(int argc, char const** argv){
 
-	MyGame *App = new MyGame(1000, 650, "test");
+	MyGame *App = new MyGame("Mi Juego en SFML");
 
 	App->Init();
 

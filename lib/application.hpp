@@ -22,6 +22,10 @@ namespace GT{
 		private:
 			int Width;
 			int Height;
+			int DesignWidth;
+			int DesignHeight;
+			float FactorScaleX;
+			float FactorScaleY;
 			sf::RenderWindow *Window;
 			ObjectManager<GT::Pantalla *> Pantallas;
             ObjectManager<GT::Image> Images;
@@ -31,6 +35,10 @@ namespace GT{
 		public:
 			friend class GT::Pantalla;
 			bool doIt(int prov, int range);
+			void setDesignWidth(int w){DesignWidth = w;}
+			void setDesignHeight(int h){DesignHeight = h;}
+			float getScaleFactorX(void){return  1.0f*Width / DesignWidth;}
+			float getScaleFactorY(void){return 1.0f*Height / DesignHeight;}
 			void UpdateScreenWidth(int w){Width = w;}
 			void UpdateScreenHeight(int h){Height = h;}
 			int GetScreenWidth(void){return Width;}
@@ -50,7 +58,7 @@ namespace GT{
 			void EscribirTexto(std::string fontId, std::string srt, int size, int x, int y, sf::Color color);
 			virtual void Init(void);
 			void Run(void);
-			Application(int w, int h, std::string title);
+			Application(std::string title);
 			virtual ~Application();
 
 	};

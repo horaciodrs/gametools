@@ -7,7 +7,19 @@
 
 void PantallaMenu::Init(void){
 
-	
+	Frame = new GT::Object("Frame1", this->App);
+    
+    Frame->setX(this->App->GetScreenWidth()/2);
+    Frame->setY(this->App->GetScreenHeight()/2);
+
+    Frame->setImage(this->App->GetImage("img.gui.frame"));
+
+}
+
+void PantallaMenu::Render(){
+    
+    Frame->Draw();
+
 }
 
 void PantallaMenu::Salir(std::string pPantallaId){
@@ -25,18 +37,12 @@ void PantallaMenu::EventHandler(void){
 
 }
 
-void PantallaMenu::Render(void){
-
-
-}
-
 void PantallaMenu::OnWindowResize(void){
-
 
 }
 
 void PantallaMenu::End(){
-    
+    delete Frame;
 }
 
 PantallaMenu::PantallaMenu(std::string pId, GT::Application *pApp) : Pantalla(pId, pApp){

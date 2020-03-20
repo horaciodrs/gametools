@@ -2,6 +2,14 @@
 
 namespace GT{
 
+	void Object::setFactorScaleX(float sx){
+		FactorScaleX = sx;
+	}
+
+    void Object::setFactorScaleY(float sy){
+		FactorScaleY = sy;
+	}
+
 	void Object::moveByAngle(int Velocidad){
 
 		calculateDiferencial(Velocidad);
@@ -115,6 +123,9 @@ namespace GT{
         w = Image->getWidth();
 		h = Image->getHeight();
 
+		Image->setFactorScaleX(FactorScaleX);
+		Image->setFactorScaleY(FactorScaleY);
+
 	}
 
 	void Object::Draw(int x, int y, int l, int t, int w, int h){
@@ -137,6 +148,7 @@ namespace GT{
 	}
 
 	void Object::Draw(){
+
 		this->Image->Draw(x, y, -angle);
 	}
 
@@ -145,7 +157,12 @@ namespace GT{
 	}
 
 	Object::Object(std::string pId, GT::Application *pApp) : Id(pId), App(pApp) {
+
 		angle = 0;
+		
+		setFactorScaleX(this->App->getScaleFactorX());
+    	setFactorScaleY(this->App->getScaleFactorY());
+
 	}
 
 }

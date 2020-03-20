@@ -3,7 +3,12 @@
 
 void MyGame::Init(){
 
+    this->setDesignWidth(1280);
+    this->setDesignHeight(720);
+    
     PantallaMenu *Menu = new PantallaMenu("Pantalla.Menu", this);
+
+    this->AgregarImagen("img.gui.frame", "data/images/gui/frame.png");
 
     this->AgregarPantalla(Menu);
 
@@ -15,7 +20,7 @@ void MyGame::End(){
     
 }
 
-MyGame::MyGame(int w, int h, std::string title) : GT::Application(w, h, title){
+MyGame::MyGame(std::string title) : GT::Application(title){
 
 }
 

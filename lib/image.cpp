@@ -16,6 +16,8 @@ namespace GT{
         img.setOrigin(centro);
 
         img.setPosition(x, y);
+        img.setScale(FactorScaleX, FactorScaleY);
+
         Window->draw(img);
 
     }
@@ -40,6 +42,8 @@ namespace GT{
         img.rotate(angle*180/3.14);
         
         img.setPosition(x, y);
+
+        img.setScale(FactorScaleX, FactorScaleY);
         
         Window->draw(img);
         
@@ -59,6 +63,9 @@ namespace GT{
         img.setOrigin(centro);
         
         img.setPosition(x, y);
+
+        img.setScale(FactorScaleX, FactorScaleY);
+
         Window->draw(img);
 
     }
@@ -70,11 +77,15 @@ namespace GT{
     	if(!Imagen->loadFromFile(pUrl)){
     		Imagen = NULL;
     	}
+
+        FactorScaleX = 1;
+        FactorScaleY = 1;
     		
     }
 
     Image::Image(){
-
+        FactorScaleX = 1;
+        FactorScaleY = 1;
     }
 
     Image::~Image(){

@@ -122,12 +122,12 @@ namespace GT{
 
 	}
 
-	Application::Application(int w, int h, std::string title){
+	Application::Application(std::string title){
 
         ConfigFile GameSettings("game.cfg");
 
-		int Width = GameSettings.Value("graphics", "width");
-		int Height = GameSettings.Value("graphics", "height");
+		Width = GameSettings.Value("graphics", "width");
+		Height = GameSettings.Value("graphics", "height");
         int FrameRateLimit = GameSettings.Value("graphics", "limitfps");
         std::string VerticalSync = GameSettings.Value("graphics", "limitfps");
         std::string FullScreen = GameSettings.Value("graphics", "fullscreen");
@@ -145,6 +145,9 @@ namespace GT{
         }else{
             Window->setVerticalSyncEnabled(false);
         }
+
+        DesignWidth = Width;
+        DesignHeight = Height;
 		
 		PantallaActiva = NULL;
 

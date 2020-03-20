@@ -3,11 +3,12 @@
 
 #include <iostream>
 #include <math.h>
+#include "application.hpp"
 #include "image.hpp"
 
 namespace GT{
 
-	class Application;
+	//class Application;
 
 	class Object{
 
@@ -20,10 +21,14 @@ namespace GT{
 			int dx;
 			int dy;
 			float angle;			//Angulo de la imagen.
+			float FactorScaleX;
+			float FactorScaleY;
 			GT::Image *Image;		//Puntero al Asset;
 			GT::Application *App;	//Puntero a la aplicacion.
 		public:
 			/*SETTERS*/
+			void setFactorScaleX(float sx);
+            void setFactorScaleY(float sy);
 			void setImage(GT::Image *pImage);
 			void setX(int pX){x = pX;}
 			void setY(int pY){y = pY;}

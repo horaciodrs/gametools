@@ -61,7 +61,7 @@ namespace GT{
                 procesarTeclasUp(&event);
 				
 				if (event.type == sf::Event::Resized){
-					App->Window->setView(sf::View(sf::FloatRect(0.f, 0.f, static_cast<float>(App->Window->getSize().x),static_cast<float>(App->Window->getSize().y))));
+					//App->Window->setView(sf::View(sf::FloatRect(0.f, 0.f, static_cast<float>(App->Window->getSize().x),static_cast<float>(App->Window->getSize().y))));
 					//App->Window->setView(sf::View(sf::FloatRect(0, 0, event.size.width, event.size.height)));
 					
 					App->UpdateScreenWidth(App->Window->getSize().x);
