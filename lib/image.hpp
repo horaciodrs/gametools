@@ -11,6 +11,7 @@ namespace GT{
             std::string Id;
             std::string Url;
             sf::Texture *Imagen;
+            sf::Sprite *img;
             sf::RenderWindow *Window;
             float FactorScaleX;
             float FactorScaleY;
