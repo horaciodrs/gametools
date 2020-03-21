@@ -8,8 +8,6 @@ void MyGame::Init(){
     
     PantallaMenu *Menu = new PantallaMenu("Pantalla.Menu", this);
 
-    this->AgregarImagen("img.gui.frame", "data/images/gui/frame.png");
-
     this->AgregarPantalla(Menu);
 
     this->SetPantallaActiva("Pantalla.Menu");

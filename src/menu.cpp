@@ -7,6 +7,9 @@
 
 void PantallaMenu::Init(void){
 
+    this->App->AgregarImagen("img.gui.frame", "data/images/gui/frame.png");
+    //Agregar un metodo QuitarImagen para descargar los recursos cuando la pantalla muere!!!
+
 	Frame = new GT::Object("Frame1", this->App);
     
     Frame->setX(this->App->GetScreenWidth()/2);
@@ -42,7 +45,9 @@ void PantallaMenu::OnWindowResize(void){
 }
 
 void PantallaMenu::End(){
+
     delete Frame;
+    
 }
 
 PantallaMenu::PantallaMenu(std::string pId, GT::Application *pApp) : Pantalla(pId, pApp){
