@@ -4,11 +4,13 @@
 #include "../lib/object_manager.hpp"
 #include "../lib/object.hpp"
 #include "../lib/pantalla.hpp"
+#include "../lib/widget.hpp"
 
 class PantallaMenu : public GT::Pantalla{
 
 	private:
-		GT::Object * Frame;
+		GT::Object *Frame;
+        GT::Widget *MyWidget;
 
 	public:
 		void Init(void);

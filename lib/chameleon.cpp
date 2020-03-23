@@ -27,7 +27,7 @@
 #include <string>
 #include <sstream>
 
-#include "chameleon.h"
+#include "Chameleon.h"
 
 Chameleon::Chameleon(std::string const& value) {
   value_=value;

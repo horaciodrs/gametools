@@ -17,6 +17,8 @@ void PantallaMenu::Init(void){
 
     Frame->setImage(this->App->GetImage("img.gui.frame"));
 
+    MyWidget = new GT::Widget();
+
 }
 
 void PantallaMenu::Render(){

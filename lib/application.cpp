@@ -1,5 +1,5 @@
 #include "application.hpp"
-#include "configfile.h"
+#include "ConfigFile.h"
 
 namespace GT{
 
