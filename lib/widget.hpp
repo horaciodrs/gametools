@@ -42,7 +42,7 @@ namespace GT{
             int getHeight(void){return Height;}
 
             virtual void Init(void);
-            virtual void Render(void);
+            virtual void Draw(void);
             virtual void EventHandler(void);
             virtual void OnWindowResize(void);
             virtual void End(void);
