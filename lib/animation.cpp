@@ -30,7 +30,7 @@ namespace GT{
 	}
 
 	Animation::Animation(std::string pId, int pFrameWidth, Application *pApp) : FrameWidth(pFrameWidth), Object(pId, pApp){
-		
+
 	}
 
 	Animation::~Animation(){

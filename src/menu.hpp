@@ -5,12 +5,14 @@
 #include "../lib/object.hpp"
 #include "../lib/pantalla.hpp"
 #include "../lib/widget.hpp"
+#include "../lib/label.hpp"
 
 class PantallaMenu : public GT::Pantalla{
 
 	private:
 		GT::Object *Frame;
         GT::Widget *MyWidget;
+        GT::Label *MyLabel;
 
 	public:
 		void Init(void);

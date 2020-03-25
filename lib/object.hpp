@@ -40,8 +40,8 @@ namespace GT{
 			std::string getImageId(void){return Image->getId();}
 			int getX(){return x;}
 			int getY(){return y;}
-			int getW(){return w;}
-			int getH(){return h;}
+			int getW(){return w*FactorScaleX;}
+			int getH(){return h*FactorScaleY;}
 			float getAngle(){return angle;}
 			float getDistance(GT::Object *AnotherObject);
 			/*CHANGE POSITION*/

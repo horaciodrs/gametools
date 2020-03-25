@@ -8,15 +8,15 @@
 namespace GT{
 
     class Widget{
-        private:
+        protected:
             std::string Id;
             Application *App;
             Pantalla *Screen;
             Widget *Parent;
             bool Focus;
             bool Focusable;
-            int Left;
-            int Top;
+            int X;
+            int Y;
             int Width;
             int Height;
         public:
@@ -26,8 +26,8 @@ namespace GT{
             void setPantalla(GT::Pantalla *pPantalla);
             void setFocus(bool pFocus){Focus = pFocus;}
             void setFocusable(bool pFocusable){Focusable = pFocusable;}
-            void setTop(int pTop){Top = pTop;}
-            void setLeft(int pLeft){Left = pLeft;}
+            void setY(int pY){Y = pY;}
+            void setX(int pX){X = pX;}
             void setWidth(int pWidth){Width = pWidth;}
             void setHeight(int pHeight){Height = pHeight;}
             /**GETTERS**/
@@ -36,8 +36,8 @@ namespace GT{
             GT::Pantalla *getPantalla(void){return Screen;}
             bool getFocus(void){return Focus;}
             bool getFocusable(void){return Focusable;}
-            int getTop(void){return Top;}
-            int getLeft(void){return Left;}
+            int getY(void){return Y;}
+            int getX(void){return X;}
             int getWidht(void){return Width;}
             int getHeight(void){return Height;}
 
