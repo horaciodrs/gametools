@@ -2,6 +2,19 @@
 
 namespace GT{
 
+
+    int Label::getWidth(void){
+
+        return this->App->GetFont(*Font)->getWidth(*Text, Size);
+
+    }
+
+    int Label::getHeight(void){
+
+       return this->App->GetFont(*Font)->getHeight(*Text, Size);
+
+    }
+
     /**
      * Asigna el texto que muestra el Label.
      *
@@ -33,7 +46,7 @@ namespace GT{
 
     void Label::setSize(int pSize){
 
-        this->Size = pSize;
+        this->Size = pSize * this->App->getScaleFactorX();
 
     }
 

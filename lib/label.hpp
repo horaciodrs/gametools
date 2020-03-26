@@ -21,6 +21,8 @@ namespace GT{
             std::string getText(void);
             std::string getFont(void);
             int getSize(void);
+            int getWidth(void);
+            int getHeight(void);
 
 
             virtual void Init(void);

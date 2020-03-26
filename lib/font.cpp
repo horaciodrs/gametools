@@ -16,18 +16,18 @@ namespace GT{
 
     void Font::Draw(std::string str, int size, int x, int y, float angle, sf::Color color){
 
-        sf::Text text;
+        //sf::Text text;
 
-        text.setFont(*Fuente);
-        text.setString(str);
-        text.setCharacterSize(size);
-        text.setFillColor(color);
+        text->setFont(*Fuente);
+        text->setString(str);
+        text->setCharacterSize(size);
+        text->setFillColor(color);
         //text.setStyle(sf::Text::Bold | sf::Text::Underlined);
-        text.setStyle(sf::Text::Bold);
-        text.setPosition(x, y);
+        text->setStyle(sf::Text::Bold);
+        text->setPosition(x, y);
 
         sf::Vector2f centro;
-        
+
         //centro.x = text.getLocalBounds().width / 2.f;
         //centro.y = text.getLocalBounds().height / 2.f;
 
@@ -37,29 +37,51 @@ namespace GT{
         //text.setOrigin(centro);
 
         if(angle != 0){
-           text.rotate(angle*180/3.14);
+           text->rotate(angle*180/3.14);
         }
 
-        Window->draw(text);
-        
+        Window->draw(*text);
+
+    }
+
+    int Font::getWidth(std::string pStr, int pSize){
+
+        text->setFont(*Fuente);
+        text->setString(pStr);
+        text->setCharacterSize(pSize);
+
+        return text->getLocalBounds().width;
+
+    }
+
+    int Font::getHeight(std::string pStr, int pSize){
+
+        text->setFont(*Fuente);
+        text->setString(pStr);
+        text->setCharacterSize(pSize);
+
+        return text->getLocalBounds().height;
+
     }
 
     Font::Font(std::string pId, std::string pUrl, sf::RenderWindow *pWindow) : Id(pId), Url(pUrl), Window(pWindow){
-        
+
         Fuente = new sf::Font();
 
-    	if(!Fuente->loadFromFile(pUrl)){
-    		Fuente = NULL;
-    	}
-    		
+        if(!Fuente->loadFromFile(pUrl)){
+            Fuente = NULL;
+        }
+
+        text = new sf::Text();
+
     }
 
     Font::Font(){
-
+        text = new sf::Text();
     }
 
     Font::~Font(){
-
+       // delete text;
     }
 
 }

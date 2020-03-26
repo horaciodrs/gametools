@@ -3,7 +3,7 @@
 #include <vector>
 
 #include "menu.hpp"
-// #include "../lib/object.hpp"
+
 
 void PantallaMenu::Init(void){
 
@@ -27,6 +27,14 @@ void PantallaMenu::Init(void){
     MyLabel->setText("Hola SFML, como estas?");
     MyLabel->setSize(40);
 
+    lblTest = new GT::Label("lbl.Test", this->App, this);
+    lblTest->setX(MyLabel->getX() + MyLabel->getWidth());
+    lblTest->setY(MyLabel->getY() + MyLabel->getHeight());
+    lblTest->setFont("font.arcade");
+    lblTest->setText("Este es un label de prueba...");
+    lblTest->setSize(25);
+
+    MyLabel->Init();
 
 }
 
@@ -35,6 +43,7 @@ void PantallaMenu::Render(){
     Frame->Draw();
     MyWidget->Draw();
     MyLabel->Draw();
+    lblTest->Draw();
 
 }
 
@@ -60,6 +69,9 @@ void PantallaMenu::OnWindowResize(void){
 void PantallaMenu::End(){
 
     delete Frame;
+    delete MyWidget;
+    delete MyLabel;
+    delete lblTest;
 
 }
 

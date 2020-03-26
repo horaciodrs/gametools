@@ -38,8 +38,8 @@ namespace GT{
             bool getFocusable(void){return Focusable;}
             int getY(void){return Y;}
             int getX(void){return X;}
-            int getWidht(void){return Width;}
-            int getHeight(void){return Height;}
+            virtual int getWidth(void){return Width;}
+            virtual int getHeight(void){return Height;}
 
             virtual void Init(void);
             virtual void Draw(void);

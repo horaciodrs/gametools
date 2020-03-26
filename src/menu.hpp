@@ -13,6 +13,7 @@ class PantallaMenu : public GT::Pantalla{
 		GT::Object *Frame;
         GT::Widget *MyWidget;
         GT::Label *MyLabel;
+        GT::Label *lblTest;
 
 	public:
 		void Init(void);
