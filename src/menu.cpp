@@ -26,6 +26,7 @@ void PantallaMenu::Init(void){
     MyLabel->setFont("font.arcade");
     MyLabel->setText("Hola SFML, como estas?");
     MyLabel->setSize(40);
+    MyLabel->setColor(sf::Color::White);
 
     lblTest = new GT::Label("lbl.Test", this->App, this);
     lblTest->setX(MyLabel->getX() + MyLabel->getWidth());
@@ -33,6 +34,7 @@ void PantallaMenu::Init(void){
     lblTest->setFont("font.arcade");
     lblTest->setText("Este es un label de prueba...");
     lblTest->setSize(25);
+    lblTest->setColor(sf::Color::Green);
 
     MyLabel->Init();
 

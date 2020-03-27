@@ -2,6 +2,17 @@
 
 namespace GT{
 
+    void Label::setColor(sf::Color pColor){
+
+       fontColor = pColor;
+
+    }
+
+    sf::Color Label::getColor(void){
+
+        return fontColor;
+
+    }
 
     int Label::getWidth(void){
 
@@ -87,7 +98,7 @@ namespace GT{
 
         Widget::Draw();
 
-        this->App->EscribirTexto(*this->Font, *this->Text, this->Size, this->X, this->Y);
+        this->App->EscribirTexto(*this->Font, *this->Text, this->Size, this->X, this->Y, this->fontColor);
 
     }
 
