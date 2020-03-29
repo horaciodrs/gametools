@@ -16,11 +16,11 @@ void PantallaMenu::Init(void){
     Frame->setY(this->App->GetScreenHeight()/2);
     Frame->setImage(this->App->GetImage("img.gui.frame"));
 
-    MyWidget = new GT::Widget("widget.Test", this->App, this);
+    MyWidget = new GT::Widgets::Widget("widget.Test", this->App, this);
     MyWidget->setFocus(true);
     MyWidget->setX(15);
 
-    MyLabel = new GT::Label("label.Test", this->App, this);
+    MyLabel = new GT::Widgets::Label("label.Test", this->App, this);
     MyLabel->setX(Frame->getX() - Frame->getW()/2 + 40);
     MyLabel->setY(Frame->getY() - Frame->getH()/2 + 20);
     MyLabel->setFont("font.arcade");
@@ -28,7 +28,7 @@ void PantallaMenu::Init(void){
     MyLabel->setSize(40);
     MyLabel->setColor(sf::Color::White);
 
-    lblTest = new GT::Label("lbl.Test", this->App, this);
+    lblTest = new GT::Widgets::Label("lbl.Test", this->App, this);
     lblTest->setX(MyLabel->getX() + MyLabel->getWidth());
     lblTest->setY(MyLabel->getY() + MyLabel->getHeight());
     lblTest->setFont("font.arcade");

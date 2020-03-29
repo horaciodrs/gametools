@@ -2,11 +2,11 @@
 #define __WIDGET_OPTION__
 
 #include "widget.hpp"
-#include "label.hpp"
+#include "widget_label.hpp"
 
 namespace GT{
 
-    namespace Widget{
+    namespace Widgets{
 
         class Option : public GT::Widget{
 
@@ -16,18 +16,18 @@ namespace GT{
                 sf::Color textColor;
                 sf::Color focusColor;
                 std::vector<std::string> Options;
-                GT::Label lblTitulo;
-                GT::Label lblValue;
-                GT::Label lblPrevious;
-                GT::Label lblNext;
+                GT::Label *lblTitulo;
+                GT::Label *lblValue;
+                GT::Label *lblPrevious;
+                GT::Label *lblNext;
 
             public:
                 void setSize(int pSize);
                 void setTitle(std::string pTitle);
                 void setColor(sf::Color pColor);
-                void setFocusColor(std::Color pColor);
-                void setOptions(std::vector<std::string> pOpciones);
-                void Run(string *refSelectedOption);    //Funcion encargada de controlar la seleccion de opciones.
+                void setFocusColor(sf::Color pColor);
+                void setOptions(std::vector<std::string> pOptions);
+                void Run(void);
 
                 
                 virtual void Init(void);
@@ -37,6 +37,9 @@ namespace GT{
                 virtual void End(void);
 
                 Option(void);
+                Option(std::string pId, GT::Application *pApp, GT::Pantalla *Pantalla);
+                Option(std::string pId, std::string pTitle, GT::Application *pApp, GT::Pantalla *Pantalla); 
+                Option(std::string pId, std::string pTitle, std::vector<std::string> pOptions, GT::Application *pApp, GT::Pantalla *Pantalla);
                 ~Option(void);
 
         };
