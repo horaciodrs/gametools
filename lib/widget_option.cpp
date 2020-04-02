@@ -53,7 +53,6 @@ namespace GT{
             lblTitulo->setSize(Size);
             lblTitulo->setColor(textColor);
 
-
             lblValue = new GT::Widgets::Label("lbl.Vaue", this->App, this->Screen);
             lblValue->setX(X + this->Width - options_width - Size);
             lblValue->setY(Y);
@@ -77,7 +76,7 @@ namespace GT{
             lblNext->setText(">");
             lblNext->setSize(Size);
             lblNext->setColor(textColor);
-            
+    
 
         }
 

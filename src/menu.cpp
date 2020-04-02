@@ -39,11 +39,13 @@ void PantallaMenu::Init(void){
     optionTest = new GT::Widgets::Option("option.Test", this->App, this);
     optionTest->setX(300);
     optionTest->setY(500);
+    optionTest->setWidth(600);
     optionTest->setTitle("Controlador");
     optionTest->setSize(40);
     optionTest->setColor(sf::Color::White);
 
     MyLabel->Init();
+    optionTest->Init();
 
 }
 
@@ -82,6 +84,7 @@ void PantallaMenu::End(){
     delete MyWidget;
     delete MyLabel;
     delete lblTest;
+    delete optionTest;
 
 }
 
