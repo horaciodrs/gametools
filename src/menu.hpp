@@ -6,6 +6,7 @@
 #include "../lib/pantalla.hpp"
 #include "../lib/widget.hpp"
 #include "../lib/widget_label.hpp"
+#include "../lib/widget_option.hpp"
 
 class PantallaMenu : public GT::Pantalla{
 
@@ -14,6 +15,7 @@ class PantallaMenu : public GT::Pantalla{
         GT::Widgets::Widget *MyWidget;
         GT::Widgets::Label *MyLabel;
         GT::Widgets::Label *lblTest;
+        GT::Widgets::Option *optionTest;
 
 	public:
 		void Init(void);

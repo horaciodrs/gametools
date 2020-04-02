@@ -1,4 +1,4 @@
-#include "label.hpp"
+#include "widget_label.hpp"
 
 namespace GT{
 

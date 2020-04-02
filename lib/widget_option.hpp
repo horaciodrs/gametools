@@ -8,7 +8,7 @@ namespace GT{
 
     namespace Widgets{
 
-        class Option : public GT::Widget{
+        class Option : public GT::Widgets::Widget{
 
             private:
                 std::string Title;
@@ -16,10 +16,10 @@ namespace GT{
                 sf::Color textColor;
                 sf::Color focusColor;
                 std::vector<std::string> Options;
-                GT::Label *lblTitulo;
-                GT::Label *lblValue;
-                GT::Label *lblPrevious;
-                GT::Label *lblNext;
+                GT::Widgets::Label *lblTitulo;
+                GT::Widgets::Label *lblValue;
+                GT::Widgets::Label *lblPrevious;
+                GT::Widgets::Label *lblNext;
 
             public:
                 void setSize(int pSize);

@@ -23,7 +23,7 @@ namespace GT{
                 int Height;
             public:
                 /**SETTERS**/
-                void setParent(GT::Widget *pParent);
+                void setParent(GT::Widgets::Widget *pParent);
                 void setApplication(GT::Application *pApp);
                 void setPantalla(GT::Pantalla *pPantalla);
                 void setFocus(bool pFocus){Focus = pFocus;}
@@ -33,7 +33,7 @@ namespace GT{
                 void setWidth(int pWidth){Width = pWidth;}
                 void setHeight(int pHeight){Height = pHeight;}
                 /**GETTERS**/
-                GT::Widget *getParent(void){return Parent;}
+                GT::Widgets::Widget *getParent(void){return Parent;}
                 GT::Application *getApplication(void){return App;}
                 GT::Pantalla *getPantalla(void){return Screen;}
                 bool getFocus(void){return Focus;}

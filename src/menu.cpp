@@ -36,6 +36,13 @@ void PantallaMenu::Init(void){
     lblTest->setSize(25);
     lblTest->setColor(sf::Color::Green);
 
+    optionTest = new GT::Widgets::Option("option.Test", this->App, this);
+    optionTest->setX(300);
+    optionTest->setY(500);
+    optionTest->setTitle("Controlador");
+    optionTest->setSize(40);
+    optionTest->setColor(sf::Color::White);
+
     MyLabel->Init();
 
 }
@@ -46,6 +53,7 @@ void PantallaMenu::Render(){
     MyWidget->Draw();
     MyLabel->Draw();
     lblTest->Draw();
+    optionTest->Draw();
 
 }
 

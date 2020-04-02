@@ -43,13 +43,41 @@ namespace GT{
 
             Widget::Init();
 
+            int options_width = 100;
+
             lblTitulo = new GT::Widgets::Label("lbl.Titulo", this->App, this->Screen);
             lblTitulo->setX(X);
             lblTitulo->setY(Y);
             lblTitulo->setFont("font.arcade");
             lblTitulo->setText(Title);
-            lblTitulo->setSize(40);
+            lblTitulo->setSize(Size);
             lblTitulo->setColor(textColor);
+
+
+            lblValue = new GT::Widgets::Label("lbl.Vaue", this->App, this->Screen);
+            lblValue->setX(X + this->Width - options_width - Size);
+            lblValue->setY(Y);
+            lblValue->setFont("font.arcade");
+            lblValue->setText("Opcion 1");
+            lblValue->setSize(Size);
+            lblValue->setColor(textColor);
+            
+            lblPrevious = new GT::Widgets::Label("lbl.Previous", this->App, this->Screen);
+            lblPrevious->setX(X + this->Width - options_width - Size*2);
+            lblPrevious->setY(Y);
+            lblPrevious->setFont("font.arcade");
+            lblPrevious->setText("<");
+            lblPrevious->setSize(Size);
+            lblPrevious->setColor(textColor);
+            
+            lblNext = new GT::Widgets::Label("lbl.Next", this->App, this->Screen);
+            lblNext->setX(X + this->Width - Size);
+            lblNext->setY(Y);
+            lblNext->setFont("font.arcade");
+            lblNext->setText(">");
+            lblNext->setSize(Size);
+            lblNext->setColor(textColor);
+            
 
         }
 
@@ -58,6 +86,9 @@ namespace GT{
             Widget::Draw();
 
             lblTitulo->Draw();
+            lblValue->Draw();
+            lblNext->Draw();
+            lblPrevious->Draw();
 
         }
         
@@ -84,6 +115,7 @@ namespace GT{
             Title = "Default Option";
             textColor = sf::Color::White;
             focusColor = sf::Color::White;
+            Size = 40;
             setX(0);
             setY(0);
 
@@ -94,6 +126,7 @@ namespace GT{
             Title = "Default Option";
             textColor = sf::Color::White;
             focusColor = sf::Color::White;
+            Size = 40;
             setX(0);
             setY(0);
 
@@ -104,6 +137,7 @@ namespace GT{
             Title = pTitle;
             textColor = sf::Color::White;
             focusColor = sf::Color::White;
+            Size = 40;
             setX(0);
             setY(0);
 
@@ -115,6 +149,7 @@ namespace GT{
             Options = pOptions;
             textColor = sf::Color::White;
             focusColor = sf::Color::White;
+            Size = 40;
             setX(0);
             setY(0);
 
@@ -123,6 +158,9 @@ namespace GT{
         Option::~Option(void){
 
             delete lblTitulo;
+            delete lblValue;
+            delete lblPrevious;
+            delete lblNext;
 
             Widget::~Widget();
 
