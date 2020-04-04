@@ -161,7 +161,7 @@ namespace GT{
             delete lblPrevious;
             delete lblNext;
 
-            Widget::~Widget();
+            //Widget::~Widget();
 
         }
 

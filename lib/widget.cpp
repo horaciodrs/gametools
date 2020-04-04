@@ -51,7 +51,8 @@ namespace GT{
         }
 
         Widget::~Widget(){
-
+            //El destructor se ejecuta automaticamente cuando se destruye una clase hija de un widget.
+            //No es necesario llamarlo desde el destructor de la clase hija.
         }
 
     }

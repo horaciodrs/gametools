@@ -36,7 +36,7 @@ namespace GT{
                 virtual void OnWindowResize(void);
                 virtual void End(void);
 
-                Label(void);
+                Label();
                 Label(std::string pId, GT::Application *pApp, GT::Pantalla *Pantalla);
                 Label(std::string pId, std::string pText, GT::Application *pApp, GT::Pantalla *Pantalla);
                 virtual ~Label();

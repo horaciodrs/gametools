@@ -138,9 +138,9 @@ namespace GT{
 
         }
 
-        Label::~Label(void){
+        Label::~Label(){
 
-            Widget::~Widget();
+            //Widget::~Widget();
 
         }
 
