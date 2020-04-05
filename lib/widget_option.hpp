@@ -13,6 +13,7 @@ namespace GT{
             private:
                 std::string Title;
                 int Size;
+                int optionMaxWidth;
                 sf::Color textColor;
                 sf::Color focusColor;
                 std::vector<std::string> Options;
@@ -20,6 +21,8 @@ namespace GT{
                 GT::Widgets::Label *lblValue;
                 GT::Widgets::Label *lblPrevious;
                 GT::Widgets::Label *lblNext;
+
+                void maxWidthCalc(void);
 
             public:
                 void setSize(int pSize);

@@ -31,6 +31,44 @@ namespace GT{
 
             Options = pOptions;
 
+            //Caundo se cargan las opciones. Podemos calcular la opcion que requiere mas ancho.
+            //para establecer el ancho destinado a las opciones. De esta forma vamos a poder
+            //ubicar de forma correcta las flechas derecha e izquierda para controlar
+            //la opcion seleccionada.
+            
+            maxWidthCalc();
+
+        }
+
+        void Option::maxWidthCalc(void){
+
+            int maxWidth = 0;
+            int anchoActual = 0;
+
+            for(int i=0; i < Options.size(); i++){
+
+                GT::Widgets::Label *auxLabel = new GT::Widgets::Label("lbl.width.aux", this->App, this->Screen);;
+
+                auxLabel->setFont("font.arcade");
+                auxLabel->setText(Options[i]);
+                auxLabel->setSize(40);
+
+                auxLabel->Init();
+
+                anchoActual = auxLabel->getWidth();
+
+                if(anchoActual > maxWidth){
+        
+                     maxWidth = anchoActual;
+
+                }
+
+                delete auxLabel;
+
+            }
+
+            optionMaxWidth = maxWidth;
+
         }
         
         void Option::Run(void){
@@ -53,24 +91,26 @@ namespace GT{
             lblTitulo->setSize(Size);
             lblTitulo->setColor(textColor);
 
+            maxWidthCalc();
+
             lblValue = new GT::Widgets::Label("lbl.Vaue", this->App, this->Screen);
-            lblValue->setX(X + this->Width - options_width - Size);
+            lblValue->setX(X + this->Width - optionMaxWidth);
             lblValue->setY(Y);
             lblValue->setFont("font.arcade");
-            lblValue->setText("Opcion 1");
+            lblValue->setText(Options[0]);
             lblValue->setSize(Size);
             lblValue->setColor(textColor);
             
             lblPrevious = new GT::Widgets::Label("lbl.Previous", this->App, this->Screen);
-            lblPrevious->setX(X + this->Width - options_width - Size*2);
+            lblPrevious->setX(X + this->Width - optionMaxWidth - Size);
             lblPrevious->setY(Y);
             lblPrevious->setFont("font.arcade");
             lblPrevious->setText("<");
             lblPrevious->setSize(Size);
             lblPrevious->setColor(textColor);
-            
+
             lblNext = new GT::Widgets::Label("lbl.Next", this->App, this->Screen);
-            lblNext->setX(X + this->Width - Size);
+            lblNext->setX(X + this->Width);
             lblNext->setY(Y);
             lblNext->setFont("font.arcade");
             lblNext->setText(">");
@@ -117,6 +157,7 @@ namespace GT{
             Size = 40;
             setX(0);
             setY(0);
+            optionMaxWidth = 0;
 
         }
         
@@ -128,6 +169,7 @@ namespace GT{
             Size = 40;
             setX(0);
             setY(0);
+            optionMaxWidth = 0;
 
         }
         
@@ -139,6 +181,7 @@ namespace GT{
             Size = 40;
             setX(0);
             setY(0);
+            optionMaxWidth = 0;
 
         }
         
@@ -151,6 +194,7 @@ namespace GT{
             Size = 40;
             setX(0);
             setY(0);
+            optionMaxWidth = 0;
 
         }
         
@@ -161,7 +205,8 @@ namespace GT{
             delete lblPrevious;
             delete lblNext;
 
-            //Widget::~Widget();
+            //Widget::~Widget(); No es necesario llamarlo manualmente.
+            //Es decir, el destructor de la clase padre se ejecuta automaticamente.
 
         }
 
