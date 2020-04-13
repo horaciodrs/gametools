@@ -39,20 +39,25 @@ void PantallaMenu::Init(void){
     optionTest = new GT::Widgets::Option("option.Test", this->App, this);
     optionTest->setX(300);
     optionTest->setY(500);
-    optionTest->setWidth(800);
+    optionTest->setWidth(1000);
     optionTest->setTitle("Controlador");
     optionTest->setSize(40);
     optionTest->setColor(sf::Color::White);
+
+    //Asigno las opciones
 
     std::vector<std::string> auxOptions;
 
     auxOptions.push_back("Teclado");
     auxOptions.push_back("Joystick USB");
+    auxOptions.push_back("Mouse");
 
     optionTest->setOptions(auxOptions);
 
     MyLabel->Init();
     optionTest->Init();
+
+    optionTest->selectOption("Teclado");
 
 }
 

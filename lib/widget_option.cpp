@@ -70,6 +70,43 @@ namespace GT{
             optionMaxWidth = maxWidth;
 
         }
+
+        void Option::selectOption(int pOption){
+
+            selectedOption = pOption;
+
+            //Puede ocurrir que se llame a esta funcion y todavía no este
+            //creado el lblValue...
+            //Habría que poner una validación o un try
+
+            if((selectedOption >= 0) && (selectedOption < Options.size())){
+                lblValue->setText(Options[selectedOption]);
+            }else{
+                lblValue->setText("");
+                selectedOption = -1;
+            }
+
+        }
+
+        void Option::selectOption(std::string pOption){
+
+            bool Encontro = false;
+
+            for(int i=0; i<Options.size(); i++){
+                if(Options[i] == pOption){
+                    Encontro = true;
+                    selectedOption = i;
+                    lblValue->setText(Options[i]);
+                    break;
+                }
+            }
+
+            if(!Encontro){
+                lblValue->setText("");
+                selectedOption = -1;
+            }
+
+        }
         
         void Option::Run(void){
 
@@ -94,15 +131,16 @@ namespace GT{
             maxWidthCalc();
 
             lblValue = new GT::Widgets::Label("lbl.Vaue", this->App, this->Screen);
-            lblValue->setX(X + this->Width - optionMaxWidth);
+            lblValue->setX(X + this->Width - optionMaxWidth - Size);
             lblValue->setY(Y);
             lblValue->setFont("font.arcade");
-            lblValue->setText(Options[0]);
             lblValue->setSize(Size);
             lblValue->setColor(textColor);
+
+            selectOption(selectedOption);
             
             lblPrevious = new GT::Widgets::Label("lbl.Previous", this->App, this->Screen);
-            lblPrevious->setX(X + this->Width - optionMaxWidth - Size);
+            lblPrevious->setX(X + this->Width - optionMaxWidth - Size*2);
             lblPrevious->setY(Y);
             lblPrevious->setFont("font.arcade");
             lblPrevious->setText("<");
@@ -158,6 +196,7 @@ namespace GT{
             setX(0);
             setY(0);
             optionMaxWidth = 0;
+            selectedOption = -1;
 
         }
         
@@ -170,6 +209,7 @@ namespace GT{
             setX(0);
             setY(0);
             optionMaxWidth = 0;
+            selectedOption = -1;
 
         }
         
@@ -182,6 +222,7 @@ namespace GT{
             setX(0);
             setY(0);
             optionMaxWidth = 0;
+            selectedOption = -1;
 
         }
         
@@ -195,6 +236,7 @@ namespace GT{
             setX(0);
             setY(0);
             optionMaxWidth = 0;
+            selectedOption = -1;
 
         }
         

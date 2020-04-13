@@ -14,6 +14,7 @@ namespace GT{
                 std::string Title;
                 int Size;
                 int optionMaxWidth;
+                int selectedOption;
                 sf::Color textColor;
                 sf::Color focusColor;
                 std::vector<std::string> Options;
@@ -30,6 +31,8 @@ namespace GT{
                 void setColor(sf::Color pColor);
                 void setFocusColor(sf::Color pColor);
                 void setOptions(std::vector<std::string> pOptions);
+                void selectOption(std::string pOption);
+                void selectOption(int pOption);
                 void Run(void);
 
                 
